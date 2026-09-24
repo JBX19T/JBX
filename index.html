@@ -204,6 +204,16 @@
     .hero h1{font-size:2rem;}
     .item-desc{max-width:100%;}
   }
+
+  @media print{
+    body{background-image:none;}
+    section.cat{page-break-before:always;break-before:page;}
+    section.cat:first-of-type{page-break-before:auto;break-before:auto;}
+    .hero{page-break-before:auto;}
+    .final-cta{page-break-before:always;break-before:page;}
+    .item,.anchor,.extras-box,.crosssell{page-break-inside:avoid;break-inside:avoid;}
+    .cat-head,.cat-note,.subgroup-title{page-break-after:avoid;break-after:avoid;}
+  }
 </style>
 </head>
 <body>

@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Petisqueira Bar Dourada — Menu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0b0c;
+    --bg-panel:#131315;
+    --gold:#d4af37;
+    --gold-light:#f3e3ac;
+    --gold-dim:#8a742c;
+    --cream:#f3ede0;
+    --muted:#b9b2a2;
+    --line:rgba(212,175,55,0.35);
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--cream);}
+  body{
+    font-family:'Montserrat',sans-serif;
+    background-image:
+      linear-gradient(135deg, rgba(212,175,55,0.05) 1px, transparent 1px),
+      linear-gradient(45deg, rgba(212,175,55,0.05) 1px, transparent 1px);
+    background-size:46px 46px;
+    background-color:var(--bg);
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:0 22px 80px;}
+
+  /* HERO */
+  .hero{
+    text-align:center;
+    padding:64px 20px 40px;
+    border-bottom:1px solid var(--line);
+    position:relative;
+  }
+  .hero img{width:150px;height:auto;margin-bottom:18px;filter:drop-shadow(0 0 18px rgba(212,175,55,0.25));}
+  .hero h1{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:700;
+    letter-spacing:0.12em;
+    font-size:2.6rem;
+    margin:0 0 6px;
+    background:linear-gradient(180deg,var(--gold-light),var(--gold));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+  .hero .sub{
+    letter-spacing:0.35em;
+    font-size:0.72rem;
+    color:var(--muted);
+    text-transform:uppercase;
+    margin-bottom:22px;
+  }
+  .hero .tagline{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:1.15rem;
+    color:var(--gold-light);
+  }
+
+  /* SECTION */
+  section.cat{padding:46px 0 10px;border-bottom:1px solid var(--line);}
+  section.cat:last-of-type{border-bottom:none;}
+  .cat-head{text-align:center;margin-bottom:8px;}
+  .cat-eyebrow{
+    font-size:0.68rem;
+    letter-spacing:0.3em;
+    text-transform:uppercase;
+    color:var(--gold-dim);
+    margin-bottom:4px;
+  }
+  .cat-title{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:700;
+    font-size:1.9rem;
+    color:var(--gold-light);
+    margin:0;
+  }
+  .cat-note{
+    text-align:center;
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    color:var(--muted);
+    font-size:0.98rem;
+    margin:6px 0 30px;
+  }
+
+  /* ITEM */
+  .item{
+    padding:16px 0;
+    border-top:1px solid rgba(212,175,55,0.12);
+  }
+  .item:first-of-type{border-top:none;}
+  .item-row{display:flex;justify-content:space-between;align-items:baseline;gap:14px;}
+  .item-name{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:600;
+    font-size:1.25rem;
+    color:var(--cream);
+  }
+  .item.featured .item-name{color:var(--gold-light);font-size:1.4rem;}
+  .item-price{
+    font-size:0.92rem;
+    color:var(--gold);
+    white-space:nowrap;
+    font-weight:500;
+    letter-spacing:0.02em;
+  }
+  .item-price.tbd{color:var(--muted);font-style:italic;font-size:0.78rem;}
+  .item-desc{
+    font-size:0.86rem;
+    color:var(--muted);
+    line-height:1.5;
+    margin-top:4px;
+    max-width:88%;
+  }
+  .badge{
+    display:inline-block;
+    font-size:0.6rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:#0b0b0c;
+    background:linear-gradient(180deg,var(--gold-light),var(--gold));
+    padding:2px 8px;
+    border-radius:2px;
+    margin-left:8px;
+    vertical-align:middle;
+    font-weight:700;
+  }
+  .sizes{display:flex;gap:14px;flex-shrink:0;}
+  .size-chip{text-align:right;font-size:0.8rem;color:var(--gold);}
+  .size-chip small{display:block;color:var(--muted);font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;}
+
+  /* FEATURED / ANCHOR CARD */
+  .anchor{
+    margin:26px 0;
+    padding:22px;
+    border:1px solid var(--line);
+    background:linear-gradient(180deg, rgba(212,175,55,0.06), transparent);
+    border-radius:4px;
+    text-align:center;
+  }
+  .anchor .badge{margin:0 0 10px;position:static;}
+  .anchor .item-name{font-size:1.5rem;display:block;color:var(--gold-light);}
+  .anchor .item-price{display:block;margin:6px 0 10px;font-size:1rem;}
+  .anchor .item-desc{margin:0 auto;max-width:100%;font-style:italic;font-family:'Cormorant Garamond',serif;font-size:1.02rem;}
+
+  /* CROSS-SELL */
+  .crosssell{
+    margin-top:24px;
+    text-align:center;
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    color:var(--gold-light);
+    font-size:1rem;
+    opacity:0.9;
+  }
+  .extras-box{
+    margin-top:22px;
+    padding:14px 18px;
+    border:1px dashed var(--line);
+    border-radius:4px;
+    text-align:center;
+    font-size:0.82rem;
+    color:var(--muted);
+  }
+  .extras-box b{color:var(--gold-light);letter-spacing:0.08em;}
+
+  .subgroup-title{
+    text-align:center;
+    font-size:0.7rem;
+    letter-spacing:0.25em;
+    text-transform:uppercase;
+    color:var(--gold-dim);
+    margin:28px 0 10px;
+  }
+
+  /* CTA FINAL */
+  .final-cta{
+    text-align:center;
+    padding:64px 20px 40px;
+  }
+  .final-cta .line1{
+    font-family:'Cormorant Garamond',serif;
+    font-size:1.6rem;
+    color:var(--gold-light);
+    font-weight:600;
+  }
+  .final-cta .line2{
+    font-size:0.75rem;
+    letter-spacing:0.3em;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin-top:10px;
+  }
+  .final-cta img{width:64px;margin-top:26px;opacity:0.85;}
+
+  @media (max-width:480px){
+    .hero h1{font-size:2rem;}
+    .item-desc{max-width:100%;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- HERO -->
+  <header class="hero">
+    <img src="assets/img/logo.jpg" alt="Petisqueira Bar Dourada">
+    <h1>Petisqueira Bar Dourada</h1>
+    <div class="sub">Bar &middot; Petiscos &middot; Pizzas</div>
+    <div class="tagline">Uma experiência que começa no primeiro pedido.</div>
+  </header>
+
+  <!-- PARA COMEÇAR -->
+  <section class="cat">
+    <div class="cat-head">
+      <div class="cat-eyebrow">Petiscos</div>
+      <h2 class="cat-title">Para Começar</h2>
+    </div>
+    <p class="cat-note">Pequenos sabores para abrir o apetite e animar a mesa.</p>
+
+    <div class="item">
+      <div class="item-row"><span class="item-name">Hambúrguer</span><span class="item-price">2.000 Kz</span></div>
+      <div class="item-desc">Hambúrguer suculento, servido no ponto certo para abrir bem o apetite.</div>
+    </div>
+    <div class="item">
+      <div class="item-row"><span class="item-name">Cachorro com Ovo</span><span class="item-price">1.500 Kz</span></div>
+    </div>
+    <div class="item">
+      <div class="item-row"><span class="item-name">Cachorro sem Ovo</span><span class="item-price">1.000 Kz</span></div>
+    </div>
+    <div class="item">
+      <div class="item-row"><span class="item-name">Sopa</span><span class="item-price">1.500 Kz</span></div>
+      <div class="item-desc">Sopa quente e reconfortante, ideal para começar bem a refeição.</div>
+    </div>
+    <div class="item">
+      <div class="item-row"><span class="item-name">Chouriço Assado <span class="badge">Para Partilhar</span></span><span class="item-price">1.000 Kz</span></div>
+      <div class="item-desc">Chouriço assado na brasa, aromático e cheio de sabor.</div>
+    </div>
+    <div class="item">
+      <div class="item-row"><span class="item-name">Patinha</span><span class="item-price">1.000 Kz</span></div>
+    </div>
+    <div class="item">
+      <div class="item-row"><span class="item-name">Isca</span><span class="item-price">2.000 Kz</span></div>
+      <div class="item-desc">Iscas bem temperadas, douradas e crocantes por fora.</div>
+    </div>
+    <div class="item">
+      <div class="item-row"><span class="item-name">Frango à Passarinho com Batata</span><span class="item-price">2.500 Kz</span></div>
+      <div class="item-desc">Frango à passarinho crocante, dourado e bem temperado, acompanhado de batatas fritas.</div>
+    </div>
+    <div class="item">
+      <div class="item-row"><span class="item-name">Peixe Panado com Molho Escabeche</span><span class="item-price">2.000 Kz</span></div>
+      <div class="item-desc">Peixe panado, crocante por fora e suculento por dentro, servido com molho escabeche caseiro.</div>
+    </div>
+    <div class="item">
+      <div class="item-row"><span class="item-name">Pincho</span><span class="item-price">1.000 Kz</span></div>
+    </div>
+    <div class="item">
+      <div class="item-row"><span class="item-name">Esteira de Arroz</span><span class="item-price">1.000 Kz</span></div>
+      <div class="item-desc">Acompanhamento simples e saboroso.</div>
+    </div>
+    <div class="item">
+      <div class="item-row"><span class="item-name">Esteira de Feijão</span><span class="item-price">1.000 Kz</span></div>
+      <div class="item-desc">Acompanhamento simples e saboroso.</div>
+    </div>
+
+    <p class="crosssell">Perfeito para partilhar. Combine com a sua bebida favorita.</p>
+  </section>
+
+  <!-- SABORES DA CASA -->
+  <section class="cat">
+    <div class="cat-head">
+      <div class="cat-eyebrow">Almoço</div>
+      <h2 class="cat-title">Sabores da Casa</h2>
+    </div>
+    <p class="cat-note">Refeições completas, feitas para quem gosta de comer bem.</p>
+
+    <div class="item">
+      <div class="item-row"><span class="item-name">Funge</span><span class="item-price">2.500 Kz</span></div>
+    </div>
+    <div class="item">
+      <div class="item-row"><span class="item-name">Arroz</span><span class="item-price">3.000 Kz</span></div>
+    </div>
+    <div class="item">
+      <div class="item-row"><span class="item-name">Mufete <span class="badge">Para Partilhar</span></span><span class="item-price">3.500 Kz</span></div>
+      <div class="item-desc">Mufete tradicional angolano, servido à moda da casa.</div>
+    </div>
+
+    <p class="crosssell">Complete o seu prato com um acompanhamento.</p>
+  </section>
+
+  <!-- PIZZAS -->
+  <section class="cat">
+    <div class="cat-head">
+      <div class="cat-eyebrow">Feitas na Casa</div>
+      <h2 class="cat-title">As Nossas Pizzas</h2>
+    </div>
+    <p class="cat-note">Massa fina, ingredientes selecionados e o toque dourado da casa.</p>
+
+    <!-- Anchor product -->
+    <div class="anchor">
+      <span class="badge">★ Experiência Dourada</span>
+      <span class="item-name">Pizza de Camarão</span>
+      <span class="item-price">Grande 16.500 Kz &nbsp;·&nbsp; Média 14.000 Kz</span>
+      <p class="item-desc">Camarão, queijo e ingredientes selecionados numa combinação pensada para quem quer experimentar algo especial.</p>
+    </div>
+
+    <div class="item">
+      <div class="item-row">
+        <span class="item-name">Margarida</span>
+        <div class="sizes"><span class="size-chip"><small>G</small>10.500 Kz</span><span class="size-chip"><small>M</small>8.500 Kz</span></div>
+      </div>
+      <div class="item-desc">Molho de tomate, fiambre, queijo, milho doce, cogumelo, cebola e pimenta — uma combinação clássica e reconfortante.</div>
+    </div>
+    <div class="item">
+      <div class="item-row">
+        <span class="item-name">Pizza de Atum</span>
+        <div class="sizes"><span class="size-chip"><small>G</small>12.000 Kz</span><span class="size-chip"><small>M</small>10.500 Kz</span></div>
+      </div>
+      <div class="item-desc">Atum, milho doce, cogumelo, cebola e pimenta sobre uma base de queijo derretido e orégão.</div>
+    </div>
+    <div class="item">
+      <div class="item-row">
+        <span class="item-name">Pizza de Frango</span>
+        <div class="sizes"><span class="size-chip"><small>G</small>12.000 Kz</span><span class="size-chip"><small>M</small>10.500 Kz</span></div>
+      </div>
+      <div class="item-desc">Frango, milho doce, cogumelo, cebola e pimenta, finalizada com queijo e orégão.</div>
+    </div>
+    <div class="item">
+      <div class="item-row">
+        <span class="item-name">Bolonhesa</span>
+        <div class="sizes"><span class="size-chip"><small>G</small>12.000 Kz</span><span class="size-chip"><small>M</small>10.500 Kz</span></div>
+      </div>
+      <div class="item-desc">Carne moída, milho doce, cogumelo, cebola e pimenta, ao estilo bolonhesa.</div>
+    </div>
+    <div class="item">
+      <div class="item-row">
+        <span class="item-name">Pizza de Chouriço</span>
+        <div class="sizes"><span class="size-chip"><small>G</small>12.000 Kz</span><span class="size-chip"><small>M</small>10.500 Kz</span></div>
+      </div>
+      <div class="item-desc">Chouriço, milho doce, cogumelo, cebola e pimenta, com um toque defumado irresistível.</div>
+    </div>
+    <div class="item">
+      <div class="item-row">
+        <span class="item-name">4 Estação <span class="badge">Especial da Casa</span></span>
+        <div class="sizes"><span class="size-chip"><small>G</small>16.500 Kz</span><span class="size-chip"><small>M</small>14.500 Kz</span></div>
+      </div>
+      <div class="item-desc">Frango, atum, chouriço e carne moída com milho doce, cogumelo e cebola — quatro sabores numa só pizza, ideal para partilhar.</div>
+    </div>
+
+    <div class="extras-box"><b>Atenção aos Extras</b><br>Adicione um ingrediente extra por +2.000 Kz.</div>
+    <p class="crosssell">Que tal acompanhar a sua pizza com uma bebida bem gelada?</p>
+  </section>
+
+  <!-- ESPECIAL DA NOITE -->
+  <section class="cat">
+    <div class="cat-head">
+      <div class="cat-eyebrow">Noites Especiais</div>
+      <h2 class="cat-title">Especial da Noite</h2>
+    </div>
+    <p class="cat-note">Sabores intensos, pensados para acompanhar uma noite fora do comum.</p>
+
+    <div class="anchor">
+      <span class="badge">★ Ideal para 2</span>
+      <span class="item-name">Grelhada Mista</span>
+      <span class="item-price">30.000 Kz</span>
+      <p class="item-desc">Seleção de carnes grelhadas, suculentas e cuidadosamente preparadas para uma experiência completa à mesa.</p>
+    </div>
+
+    <div class="subgroup-title">Carnes</div>
+    <div class="item">
+      <div class="item-row"><span class="item-name">Bife de Pimenta</span><span class="item-price">12.000 Kz</span></div>
+    </div>
+
+    <div class="subgroup-title">Para Partilhar</div>
+    <div class="item">
+      <div class="item-row"><span class="item-name">Pica-Pau</span><span class="item-price">8.000 Kz</span></div>
+    </div>
+    <div class="item">
+      <div class="item-row"><span class="item-name">Chouriço Caseiro</span><span class="item-price">8.000 Kz</span></div>
+    </div>
+    <div class="item">
+      <div class="item-row"><span class="item-name">Frango à Passarinho</span><span class="item-price">7.000 Kz</span></div>
+    </div>
+
+    <div class="subgroup-title">Peixes</div>
+    <div class="item">
+      <div class="item-row"><span class="item-name">Lombo de Garoupa</span><span class="item-price">14.000 Kz</span></div>
+    </div>
+    <div class="item">
+      <div class="item-row"><span class="item-name">Choco Frito</span><span class="item-price">10.000 Kz</span></div>
+    </div>
+    <div class="item">
+      <div class="item-row"><span class="item-name">Gambas ao Alho <span class="badge">Para Partilhar</span></span><span class="item-price">10.000 Kz</span></div>
+      <div class="item-desc">Gambas salteadas ao alho, aromáticas e suculentas, perfeitas para partilhar.</div>
+    </div>
+
+    <div class="subgroup-title">Snacks</div>
+    <div class="item">
+      <div class="item-row"><span class="item-name">Hambúrguer</span><span class="item-price">7.000 Kz</span></div>
+    </div>
+    <div class="item">
+      <div class="item-row"><span class="item-name">Pizza de Carne</span><span class="item-price">12.000 Kz</span></div>
+    </div>
+    <div class="item">
+      <div class="item-row"><span class="item-name">Pizza de Queijo</span><span class="item-price">12.000 Kz</span></div>
+    </div>
+    <div class="item">
+      <div class="item-row"><span class="item-name">Pizza de Chouriço</span><span class="item-price">12.000 Kz</span></div>
+    </div>
+    <div class="item">
+      <div class="item-row"><span class="item-name">Tábua de Picanha <span class="badge">Para Partilhar</span></span><span class="item-price">15.000 Kz</span></div>
+      <div class="item-desc">Picanha fatiada, servida em tábua — ideal para partilhar à mesa.</div>
+    </div>
+
+    <p class="crosssell">Boa comida fica melhor quando é partilhada.</p>
+  </section>
+
+  <!-- BEBIDAS -->
+  <section class="cat">
+    <div class="cat-head">
+      <div class="cat-eyebrow">Bar</div>
+      <h2 class="cat-title">Para Refrescar</h2>
+    </div>
+    <p class="cat-note">Escolha o seu favorito.</p>
+
+    <div class="item"><div class="item-row"><span class="item-name">Cuca</span><span class="item-price">350 Kz</span></div></div>
+    <div class="item"><div class="item-row"><span class="item-name">Eka</span><span class="item-price">350 Kz</span></div></div>
+    <div class="item"><div class="item-row"><span class="item-name">Nocal</span><span class="item-price">350 Kz</span></div></div>
+    <div class="item"><div class="item-row"><span class="item-name">Booster</span><span class="item-price">800 Kz</span></div></div>
+    <div class="item"><div class="item-row"><span class="item-name">Vinho Valmonte</span><span class="item-price">600 Kz</span></div></div>
+    <div class="item"><div class="item-row"><span class="item-name">Heineken</span><span class="item-price">300 Kz</span></div></div>
+    <div class="item"><div class="item-row"><span class="item-name">Pepsi</span><span class="item-price">200 Kz</span></div></div>
+    <div class="item"><div class="item-row"><span class="item-name">Água</span><span class="item-price tbd">preço a confirmar</span></div></div>
+
+    <div class="subgroup-title">Para Brindar</div>
+    <div class="item"><div class="item-row"><span class="item-name">Whisky</span><span class="item-price">800 Kz</span></div></div>
+    <div class="item"><div class="item-row"><span class="item-name">Vodka</span><span class="item-price">500 Kz</span></div></div>
+    <div class="item"><div class="item-row"><span class="item-name">Aguardente</span><span class="item-price tbd">preço a confirmar</span></div></div>
+
+    <p class="crosssell">Para acompanhar a noite, escolha também um dos nossos petiscos.</p>
+  </section>
+
+  <!-- FINAL CTA -->
+  <footer class="final-cta">
+    <div class="line1">Boa comida. Boa companhia. Boas noites.</div>
+    <div class="line2">Petisqueira Bar Dourada</div>
+    <img src="assets/img/logo.jpg" alt="Petisqueira Bar Dourada">
+  </footer>
+
+</div>
+
+<!--
+  Nota para a equipa:
+  As classes .badge já estão prontas no CSS para "Mais Pedido", "Favorito da Casa" e
+  "Recomendado". Aplicar manualmente a um item (ex: <span class="badge">Mais Pedido</span>)
+  apenas quando houver dados reais de vendas a confirmar essa etiqueta.
+-->
+</body>
+</html>

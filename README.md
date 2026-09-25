@@ -19,6 +19,23 @@ Abrir `index.html` num navegador para visualizar o menu.
   daquele evento pontual — a data e o local originais do evento não foram
   incluídos por já não se aplicarem.
 
+## Folha dedicada "As Nossas Pizzas" (`pizzas.html` / `pizzas.pdf`)
+
+Peça separada, em formato editorial premium, seguindo o esboço de estrutura
+diagonal fornecido: módulos que alternam foto em cima/informação em baixo e
+informação em cima/foto em baixo, com costura diagonal entre os dois blocos
+de cada módulo. Preços por Mini/Pequena/Média/Grande conforme tabela
+fornecida.
+
+**As fotografias das pizzas ainda não foram inseridas.** Tentei obtê-las a
+partir da internet (Unsplash, Wikimedia Commons, Pinterest), mas a política
+de rede desta sessão bloqueou os três domínios — não é algo que dê para
+contornar a partir daqui. Cada módulo tem um espaço reservado com moldura
+dourada e a etiqueta "Fotografia a inserir". Para adicionar uma foto,
+preencher o atributo `src` do `<img>` correspondente (ex.:
+`src="assets/img/pizzas/margarida.jpg"`); a etiqueta de placeholder
+desaparece automaticamente assim que houver uma imagem.
+
 ## Pontos a confirmar com a equipa
 
 - **Etiquetas de destaque** (Mais Pedido, Favorito da Casa, Recomendado):

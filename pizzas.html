@@ -70,6 +70,27 @@
     width:70px;height:1px;background:var(--line);
     margin:22px auto 0;
   }
+  .head{position:relative;}
+  .fresh-badge{
+    position:absolute;top:34px;right:18px;
+    width:108px;height:108px;
+    border:1px solid var(--gold-deep);
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    text-align:center;
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:0.66rem;
+    line-height:1.35;
+    color:var(--muted);
+    padding:10px;
+  }
+  @media (max-width:480px){
+    .fresh-badge{position:static;width:auto;height:auto;border:none;
+      margin:18px auto 0;padding:0;font-size:0.72rem;
+      display:block;
+    }
+  }
 
   /* MODULE */
   .pmodule{position:relative;padding:0 20px;margin-bottom:34px;}
@@ -77,7 +98,7 @@
 
   .p-photo{
     position:relative;
-    height:230px;
+    height:280px;
     background:
       radial-gradient(120% 140% at 20% 15%, rgba(212,175,55,0.16), transparent 55%),
       linear-gradient(155deg, var(--panel-2), var(--panel) 70%);
@@ -104,7 +125,7 @@
   /* Diagonal seams: two complementary cuts (br = drops to the right,
      bl = drops to the left) so a clipped block's edge and the next
      block's matching edge meet with no gap and no overlap. */
-  :root{--seam:42px;}
+  :root{--seam:64px;}
   .cut-br{clip-path:polygon(0 0,100% 0,100% 100%,0 calc(100% - var(--seam)));}
   .fill-br{clip-path:polygon(0 0,100% var(--seam),100% 100%,0 100%);margin-top:calc(var(--seam) * -1);}
   .cut-bl{clip-path:polygon(0 0,100% 0,100% calc(100% - var(--seam)),0 100%);}
@@ -117,10 +138,12 @@
     border-right:1px solid var(--line);
     padding:26px 26px 22px;
   }
-  .p-info.fill-br,.p-info.fill-bl{padding-top:64px;}
-  .p-info.cut-br,.p-info.cut-bl{padding-bottom:64px;}
+  .p-info.fill-br,.p-info.fill-bl{padding-top:88px;}
+  .p-info.cut-br,.p-info.cut-bl{padding-bottom:88px;}
 
   .p-name-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+  .p-icon{color:var(--gold-deep);display:inline-flex;flex-shrink:0;}
+  .p-icon svg{display:block;width:20px;height:20px;}
   .p-name{
     font-family:'Cormorant Garamond',serif;
     font-weight:700;
@@ -189,7 +212,7 @@
   @media (max-width:420px){
     .head h1{font-size:2.05rem;}
     .p-name{font-size:1.4rem;}
-    .p-photo{height:190px;}
+    .p-photo{height:220px;}
   }
 
   @media print{
@@ -206,6 +229,7 @@
     <h1>As Nossas Pizzas</h1>
     <div class="subtitle">Sabores que fazem a noite.</div>
     <div class="rule"></div>
+    <div class="fresh-badge">Massa artesanal<br>Ingredientes selecionados<br>Sempre fresca</div>
   </header>
 
   <!-- 1. MARGARIDA — foto em cima -->
@@ -218,7 +242,7 @@
       </div>
     </div>
     <div class="p-info fill-br">
-      <div class="p-name-row"><span class="p-name">Margarida</span></div>
+      <div class="p-name-row"><span class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M4 20c8-1 14-7 15-16-9 1-15 7-16 16z"/><path d="M6 18c3-3 6-6 8-10"/></svg></span><span class="p-name">Margarida</span></div>
       <p class="p-desc">Molho de tomate, fiambre e queijo, com milho doce, cogumelo, cebola e pimenta.</p>
       <div class="p-sizes">
         <div class="p-size-row"><span class="sname">Mini</span><span class="sprice">4.500 Kz</span></div>
@@ -232,7 +256,7 @@
   <!-- 2. ATUM — informação em cima -->
   <div class="pmodule">
     <div class="p-info cut-bl">
-      <div class="p-name-row"><span class="p-name">Pizza de Atum</span></div>
+      <div class="p-name-row"><span class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M3 12c3-4 8-6 12-6 3 0 5 2 6 4-1 2-3 4-6 4-4 0-9-2-12-2z"/><path d="M15 8l4-3v4"/><path d="M15 14l4 3v-4"/><circle cx="7" cy="11" r=".6" fill="currentColor"/></svg></span><span class="p-name">Pizza de Atum</span></div>
       <p class="p-desc">Atum e milho doce sobre queijo derretido, com cogumelo, cebola e um toque de orégão.</p>
       <div class="p-sizes">
         <div class="p-size-row"><span class="sname">Mini</span><span class="sprice">5.000 Kz</span></div>
@@ -260,7 +284,7 @@
       </div>
     </div>
     <div class="p-info fill-bl">
-      <div class="p-name-row"><span class="p-name">Pizza de Frango</span></div>
+      <div class="p-name-row"><span class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M9 15c-3 3-6 4-7 5 1-1 2-4 5-7"/><path d="M9 15c-2-3-2-7 1-10 3-3 8-3 10 0 2 3 0 7-3 9-2 2-6 3-8 1z"/></svg></span><span class="p-name">Pizza de Frango</span></div>
       <p class="p-desc">Frango e milho doce, com cogumelo e cebola, finalizados com queijo e orégão.</p>
       <div class="p-sizes">
         <div class="p-size-row"><span class="sname">Mini</span><span class="sprice">5.000 Kz</span></div>
@@ -274,7 +298,7 @@
   <!-- 4. BOLONHESA — informação em cima -->
   <div class="pmodule">
     <div class="p-info cut-br">
-      <div class="p-name-row"><span class="p-name">Bolonhesa</span></div>
+      <div class="p-name-row"><span class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M4 14c0-5 4-9 9-9 4 0 7 3 7 6 0 4-4 7-9 7-3 0-7-1-7-4z"/><circle cx="9" cy="12" r="1" fill="currentColor"/><circle cx="13" cy="9" r="1" fill="currentColor"/><circle cx="14" cy="14" r="1" fill="currentColor"/></svg></span><span class="p-name">Bolonhesa</span></div>
       <p class="p-desc">Carne moída e milho doce, com cogumelo e cebola, ao estilo bolonhesa.</p>
       <div class="p-sizes">
         <div class="p-size-row"><span class="sname">Mini</span><span class="sprice">5.000 Kz</span></div>
@@ -302,7 +326,7 @@
       </div>
     </div>
     <div class="p-info fill-br">
-      <div class="p-name-row"><span class="p-name">Pizza de Chouriço</span></div>
+      <div class="p-name-row"><span class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M5 15c-1-3 1-6 4-7 1 2 3 2 4 0 3 1 5 4 4 7-1 3-4 4-7 3-2-1-4-1-5-3z"/><path d="M9 8v3M15 13v3"/></svg></span><span class="p-name">Pizza de Chouriço</span></div>
       <p class="p-desc">Chouriço e milho doce, com cogumelo e cebola, num toque defumado irresistível.</p>
       <div class="p-sizes">
         <div class="p-size-row"><span class="sname">Mini</span><span class="sprice">5.000 Kz</span></div>
@@ -316,7 +340,7 @@
   <!-- 6. CAMARÃO — informação em cima, destaque -->
   <div class="pmodule">
     <div class="p-info cut-bl">
-      <div class="p-name-row"><span class="p-name">Pizza de Camarão</span><span class="tag">★ Experiência Dourada</span></div>
+      <div class="p-name-row"><span class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M6 18c-2-4-1-9 3-12 3-2 7-2 9 0-3 0-5 2-5 5 0 2 1 3 3 3-1 2-3 3-5 3-1 2-3 3-5 1z"/><path d="M9 6l-2-2M12 5l-1-2"/></svg></span><span class="p-name">Pizza de Camarão</span><span class="tag">★ Experiência Dourada</span></div>
       <p class="p-desc">Camarão e queijo selecionados, numa combinação pensada para quem quer experimentar algo especial.</p>
       <div class="p-sizes">
         <div class="p-size-row"><span class="sname">Mini</span><span class="sprice">6.500 Kz</span></div>
@@ -344,7 +368,7 @@
       </div>
     </div>
     <div class="p-info fill-bl">
-      <div class="p-name-row"><span class="p-name">4 Estações</span><span class="tag">★ Especial da Casa</span></div>
+      <div class="p-name-row"><span class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 3c1.5 2 1.5 4 0 6-1.5-2-1.5-4 0-6z"/><path d="M21 12c-2 1.5-4 1.5-6 0 2-1.5 4-1.5 6 0z"/><path d="M12 21c-1.5-2-1.5-4 0-6 1.5 2 1.5 4 0 6z"/><path d="M3 12c2-1.5 4-1.5 6 0-2 1.5-4 1.5-6 0z"/></svg></span><span class="p-name">4 Estações</span><span class="tag">★ Especial da Casa</span></div>
       <p class="p-desc">Frango, atum, chouriço e carne moída — quatro sabores numa só pizza.</p>
       <div class="p-sizes">
         <div class="p-size-row"><span class="sname">Mini</span><span class="sprice">6.500 Kz</span></div>

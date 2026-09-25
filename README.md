@@ -21,8 +21,6 @@ Abrir `index.html` num navegador para visualizar o menu.
 
 ## Pontos a confirmar com a equipa
 
-- Preço de **Água** e de **Aguardente**: ilegíveis na foto do menu original,
-  marcados como "preço a confirmar" em vez de inventados.
 - **Etiquetas de destaque** (Mais Pedido, Favorito da Casa, Recomendado):
   os estilos já existem no CSS, mas só foram aplicados a "Para Partilhar",
   "Ideal para 2" e "Especial da Casa"/"Experiência Dourada", que decorrem

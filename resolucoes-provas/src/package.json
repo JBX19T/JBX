@@ -1,0 +1,7 @@
+{
+  "name": "resolucoes-provas",
+  "private": true,
+  "description": "Gera os PDFs das resoluções (Markdown + KaTeX -> PDF via Chromium/Playwright)",
+  "scripts": { "build": "python3 figs.py && node build.js" },
+  "dependencies": { "katex": "^0.16.11", "markdown-it": "^14.1.0" }
+}

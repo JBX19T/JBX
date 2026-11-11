@@ -1,0 +1,49 @@
+@page { size: A4; }
+* { box-sizing: border-box; }
+html { font-size: 10.6pt; }
+body { font-family: Inter, "Helvetica Neue", Arial, sans-serif; color: #1c1c1e; line-height: 1.55; margin: 0; -webkit-print-color-adjust: exact; }
+.katex { font-size: 1.12em; }
+.eq { margin: .55em 0; overflow: visible; text-align: center; }
+.eq .katex-display { margin: 0; }
+.capa { border-bottom: 2.5px solid #1f3a5f; padding-bottom: 10px; margin-bottom: 16px; }
+.capa .inst { font-size: 8.6pt; letter-spacing: .08em; text-transform: uppercase; color: #5b6573; }
+.capa h1 { font-size: 20pt; margin: 4px 0 2px; color: #1f3a5f; line-height: 1.2; }
+.capa .sub { font-size: 11pt; color: #3d4654; margin-bottom: 8px; }
+table.meta { border-collapse: collapse; width: 100%; font-size: 8.8pt; }
+table.meta td { border: 1px solid #cfd6df; padding: 4px 8px; vertical-align: top; }
+table.meta td span { display: block; font-size: 7pt; text-transform: uppercase; letter-spacing: .06em; color: #7a8493; }
+h2 { font-size: 13.5pt; color: #fff; background: #1f3a5f; padding: 6px 11px; border-radius: 5px; margin: 22px 0 10px; break-after: avoid; }
+h3 { font-size: 11.6pt; color: #1f3a5f; margin: 16px 0 6px; padding-bottom: 2px; border-bottom: 1px solid #cfd6df; break-after: avoid; }
+h4 { font-size: 10.6pt; margin: 12px 0 4px; color: #33405a; break-after: avoid; }
+p { margin: .45em 0; orphans: 3; widows: 3; }
+ul, ol { margin: .35em 0 .35em 1.25em; padding: 0; }
+li { margin: .16em 0; }
+strong { font-weight: 650; }
+blockquote { margin: 8px 0; padding: 7px 12px; background: #f3f5f8; border-left: 3.5px solid #8a96a8; color: #333b49; border-radius: 0 5px 5px 0; break-inside: avoid; }
+blockquote p { margin: .25em 0; }
+.simb, .dados, .resp, .nota, .passo { border-radius: 6px; padding: 7px 12px; margin: 9px 0; break-inside: avoid; }
+.simb { background: #f2f7f2; border: 1px solid #b9d3bb; }
+.simb > p:first-child, .dados > p:first-child, .nota > p:first-child { margin-top: 0; }
+.simb ul { columns: 2; column-gap: 22px; list-style: none; margin-left: 0; font-size: .95em; }
+.simb.uma ul { columns: 1; }
+.simb li { break-inside: avoid; }
+.dados { background: #f6f4ee; border: 1px solid #ddd5bd; }
+.resp { background: #eef3fb; border: 1.4px solid #1f3a5f; }
+.resp > p { margin: .2em 0; }
+.nota { background: #fff8e6; border: 1px solid #ecd391; font-size: .95em; }
+.fig { text-align: center; margin: 10px 0; break-inside: avoid; }
+.fig svg { max-width: 100%; height: auto; }
+.leg { text-align: center; font-size: .86em; color: #5b6573; margin-top: -4px; }
+table { border-collapse: collapse; margin: 9px auto; font-size: .93em; break-inside: avoid; }
+th, td { border: 1px solid #b9c1cd; padding: 3.5px 9px; text-align: center; }
+th { background: #e6ebf2; font-weight: 650; }
+table.esq td:first-child, table.esq th:first-child { text-align: left; }
+tr.tot td { font-weight: 650; background: #f3f5f8; }
+pre { background: #f5f6f8; border: 1px solid #d5dae2; border-radius: 6px; padding: 9px 12px; font-size: 8.4pt; line-height: 1.42; white-space: pre-wrap; break-inside: avoid; }
+code { font-family: "JetBrains Mono", "DejaVu Sans Mono", monospace; font-size: .9em; }
+p code, li code, td code { background: #eff1f4; padding: 0 3px; border-radius: 3px; }
+hr { border: 0; border-top: 1px dashed #b9c1cd; margin: 16px 0; }
+.pb { break-before: page; }
+.en { font-style: italic; color: #33405a; }
+.ok { color: #18794e; font-weight: 650; }
+.no { color: #b42318; font-weight: 650; }
